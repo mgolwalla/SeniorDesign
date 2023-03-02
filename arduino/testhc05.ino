@@ -1,8 +1,8 @@
 
 #include <SoftwareSerial.h>
 char value;
-int Tx = 5;       // connect BT module TX to 5
-int Rx = 4;       // connect BT module RX to 4
+int Tx = 4;       // connect BT module TX to 4
+int Rx = 3;       // connect BT module RX to 3
 int LED = 13;
 SoftwareSerial bluetooth(Tx, Rx);
 
