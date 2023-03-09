@@ -59,6 +59,8 @@ def main():
         if(len(predictions) > 0):
             print(predictions[0]['probability'])
         
+        print(predictions)
+        
         open_cv_image = np.array(img)
         cv2.imshow("Output",open_cv_image)
         cv2.waitKey(1)
