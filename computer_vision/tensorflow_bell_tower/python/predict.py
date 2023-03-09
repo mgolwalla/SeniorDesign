@@ -56,12 +56,15 @@ def main():
         img = Image.fromarray(img)
         predictions = od_model.predict_image(img)
         
-        if(len(predictions) > 0):
-            print(predictions[0]['probability'])
-        
-        print(predictions)
-        
         open_cv_image = np.array(img)
+        side = open_cv_image.shape[0]
+        for prediction in predictions:
+            if prediction['probability'] > 0.6:
+                x = prediction['boundingBox']['left']
+                y = prediction['boundingBox']['top']
+                w = prediction['boundingBox']['width']
+                h = prediction['boundingBox']['height']
+                cv2.rectangle(open_cv_image, (int(x * side),int(y * side)), (int(x * side)+int(w * side), int(y * side)+int(h* side)), (255,0,0), 4)
         cv2.imshow("Output",open_cv_image)
         cv2.waitKey(1)
 
