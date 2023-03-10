@@ -12,6 +12,8 @@ from picamera2 import Picamera2
 from tflite_runtime.interpreter import Interpreter 
 import numpy as np
 from PIL import Image
+import time
+import serial
 
 MODEL_FILENAME = 'model.tflite'
 LABELS_FILENAME = 'labels.txt'
@@ -41,6 +43,9 @@ class TFLiteObjectDetection(ObjectDetection):
 def main():
     cv2.startWindowThread()
 
+    ser = serial.Serial('/dev/ttyACM0', 9600, timeout = 1)
+    ser.flush()
+
     picam2 = Picamera2()
     picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (416, 416)}))
     picam2.start()
@@ -51,6 +56,7 @@ def main():
     od_model = TFLiteObjectDetection(MODEL_FILENAME, labels)
 
     while True:
+        time.sleep(0.1)
         img = picam2.capture_array()
         img = cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
         img = Image.fromarray(img)
@@ -65,6 +71,7 @@ def main():
                 w = prediction['boundingBox']['width']
                 h = prediction['boundingBox']['height']
                 cv2.rectangle(open_cv_image, (int(x * side),int(y * side)), (int(x * side)+int(w * side), int(y * side)+int(h* side)), (255,0,0), 4)
+                ser.write(b"blue\n")
         cv2.imshow("Output",open_cv_image)
         cv2.waitKey(1)
 
