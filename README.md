@@ -9,7 +9,7 @@ For our senior design project we created a solar panel cleaner to automate the c
 ### Frame
 
 ### Computer Vision
-
+Imported images in Azure Custom Vision to tag images, train and test model. Then exported as TensorFlow Lite Float to run on raspberry pi's limited RAM. 
 #### Performance
 <img width="584" alt="image" src="https://user-images.githubusercontent.com/56405905/224867640-75cc4b1b-b835-425c-852b-9f8817993eb1.png">
 
