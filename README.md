@@ -14,6 +14,4 @@ Imported images in Azure Custom Vision to tag images, train and test model. Then
 <img width="584" alt="image" src="https://user-images.githubusercontent.com/56405905/224867640-75cc4b1b-b835-425c-852b-9f8817993eb1.png">
 
 
-### App
 
-### Webpage
