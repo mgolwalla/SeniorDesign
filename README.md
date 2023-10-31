@@ -1,9 +1,9 @@
 # Solar Panel Cleaner
 
-### Demo
-https://youtu.be/rPIAB68Gy5c?si=xbqFY7wmY8CWfifY
-### Report
-https://docs.google.com/document/d/1RszjJpsKLwcq8D8Gc14fSyifWRQxwLhK/edit?usp=sharing&ouid=106401357715063036319&rtpof=true&sd=true 
+
+[Demo Video](https://youtu.be/rPIAB68Gy5c?si=xbqFY7wmY8CWfifY)
+
+[Report](https://docs.google.com/document/d/1RszjJpsKLwcq8D8Gc14fSyifWRQxwLhK/edit?usp=sharing&ouid=106401357715063036319&rtpof=true&sd=true) 
 
 
 ### Overview
